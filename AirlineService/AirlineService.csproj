@@ -76,8 +76,6 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DB\AirlineDB.cs" />
-    <Compile Include="DB\Context.cs" />
     <Compile Include="Models\Airline.cs" />
     <Compile Include="AirSvc.svc.cs">
       <DependentUpon>AirSvc.svc</DependentUpon>
@@ -100,6 +98,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="DB\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

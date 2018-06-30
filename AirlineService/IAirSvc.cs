@@ -13,6 +13,6 @@ namespace AirlineService
     public interface IAirSvc
     {
         [OperationContract]
-        List<Airline> GetAllAirlines();
+        List<Flug> GetAllFlights();
     }
 }
