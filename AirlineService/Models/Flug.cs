@@ -8,7 +8,7 @@ using System.Runtime.Serialization;
 namespace AirlineService.Models
 {
     [DataContract]
-    public class Flug
+    public class Flight
     {
         [DataMember]
         public int ID { get; set; }
@@ -17,11 +17,15 @@ namespace AirlineService.Models
         [DataMember]
         public string Name { get; set; }
         [DataMember]
-        public string StartOrt { get; set; }
+        public string Origin { get; set; }
         [DataMember]
-        public string ZielOrt { get; set; }
+        public string Destination { get; set; }
         [DataMember]
-        public DateTime AbflugZeit { get; set; }
+        public DateTime DepartureTime { get; set; }
+        [DataMember]
+        public int TotalSeats { get; set; }
+        [DataMember]
+        public int ReservedSeats { get; set; }
 
     }
 }
