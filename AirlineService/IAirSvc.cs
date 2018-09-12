@@ -13,6 +13,17 @@ namespace AirlineService
     public interface IAirSvc
     {
         [OperationContract]
-        List<Flug> GetAllFlights();
+        Dictionary<string, List<Flight>> GetFlights(DateTime DepartureTime,
+                                                       DateTime LandingTime,
+                                                        string destination,
+                                                        int numberOfSeats);
+        [OperationContract]
+        Flight BookAFlight(Flight flight, int numberOfSeats);
+
+        [OperationContract]
+        List<Flight> GetAllFlight(DateTime DepartureTime,
+                                                       DateTime LandingTime,
+                                                        string destination,
+                                                        int numberOfSeats);
     }
 }

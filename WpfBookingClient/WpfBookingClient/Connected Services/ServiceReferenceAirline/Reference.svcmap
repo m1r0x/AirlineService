@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="cdffbb4b-ad18-4ea5-b792-d895af1022d6" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:58386/AirSvc.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="AirSvc.wsdl" MetadataType="Wsdl" ID="1d690cdc-bedc-4aef-8dce-986728662830" SourceId="1" SourceUrl="http://localhost:58386/AirSvc.svc?wsdl" />
+    <MetadataFile FileName="AirSvc.xsd" MetadataType="Schema" ID="91dcf1d7-59b7-43f0-96f8-e62676d429da" SourceId="1" SourceUrl="http://localhost:58386/AirSvc.svc?xsd=xsd0" />
+    <MetadataFile FileName="AirSvc1.xsd" MetadataType="Schema" ID="bcbe262b-a146-46af-9672-69b7e0110027" SourceId="1" SourceUrl="http://localhost:58386/AirSvc.svc?xsd=xsd1" />
+    <MetadataFile FileName="AirSvc2.xsd" MetadataType="Schema" ID="3572cea8-faab-41f4-b703-15982600e2b3" SourceId="1" SourceUrl="http://localhost:58386/AirSvc.svc?xsd=xsd2" />
+    <MetadataFile FileName="AirSvc3.xsd" MetadataType="Schema" ID="1afa3683-1ee8-422c-b428-9971d538f29e" SourceId="1" SourceUrl="http://localhost:58386/AirSvc.svc?xsd=xsd3" />
+    <MetadataFile FileName="AirSvc.disco" MetadataType="Disco" ID="c49629be-e00c-4e6c-9361-fc5d59ab27de" SourceId="1" SourceUrl="http://localhost:58386/AirSvc.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
