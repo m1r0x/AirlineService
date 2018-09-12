@@ -10,16 +10,16 @@ namespace AirlineService.Models
     [DataContract]
     public class Flight
     {
-        [DataMember]
+        [DataMember(IsRequired = true)]
         public int ID { get; set; }
         [DataMember]
         public Airline Airline { get; set; }
         [DataMember]
         public string Name { get; set; }
         [DataMember]
-        public string Origin { get; set; }
+        public City Origin { get; set; }
         [DataMember]
-        public string Destination { get; set; }
+        public City Destination { get; set; }
         [DataMember]
         public DateTime DepartureTime { get; set; }
         [DataMember]

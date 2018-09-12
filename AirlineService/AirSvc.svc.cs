@@ -5,22 +5,24 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using AirlineService.Models;
+using AirlineService.Helper;
 
 namespace AirlineService
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "AirSvc" in code, svc and config file together.
     // NOTE: In order to launch WCF Test Client for testing this service, please select AirSvc.svc or AirSvc.svc.cs at the Solution Explorer and start debugging.
+
     public class AirSvc : IAirSvc
     {
         public List<Flight> flights = new List<Flight>();
 
-        public Flight BookAFlight(Flight flight,
-                                    int numberOfSeats)
+        Flight IAirSvc.BookAFlight(Flight flight, int numberOfSeats)
         {
             Flight flightToBook = this.flights.Single(f => f == flight);
             if (flightToBook != null)
             {
                 flightToBook.ReservedSeats += numberOfSeats;
+
                 return flightToBook;
             }
             else
@@ -29,23 +31,22 @@ namespace AirlineService
             }
         }
 
-        public Dictionary<string, List<Flight>> GetAllFlights(DateTime DepartureTime,
-                                                                DateTime LandingTime, string Destination, int numberOfSeats)
+        Dictionary<string, List<Flight>> IAirSvc.GetFlights(DateTime DepartureTime, DateTime LandingTime, string destination, int numberOfSeats)
         {
-        
-            public Dictionary<string, List<Flight>> freeFlights = new Dictionary<string, List<Flight>>();
+            Dictionary<string, List<Flight>> freeFlights = new Dictionary<string, List<Flight>>();
 
-
-            freeFlights = FindFlight.Search(this.flights, DepartureTime,
-                                        LandingTime, string Destination, int numberOfSeats);
+            freeFlights = FindFlight.Search(flights, DepartureTime, LandingTime, destination, numberOfSeats);
 
             return freeFlights;
         }
 
 
+        public List<Flight> GetAllFlight(DateTime DepartureTime, DateTime LandingTime, string destination, int numberOfSeats)
+        {
+            return flights;
+        }
 
-
-        public AirlineService()
+        public AirSvc()
         {
             List<Flight> flights = new List<Flight>();
 
@@ -59,13 +60,21 @@ namespace AirlineService
             DateTime turkish_departure = new DateTime(2016, 01, 01, 12, 00, 00);
             DateTime lufthansa_departure = new DateTime(2018, 08, 14, 12, 00, 00, 00);
 
+            City zurich = new City { Name = "Zurich" };
+            City berlin = new City { Name = "Berlin" };
+            City basel = new City { Name = "Basel" };
+            City sanfrancisco = new City { Name = "San Francisco" };
+            City istanbul = new City { Name = "Istanbul" };
+            City bangkok = new City { Name = "Bangkok" };
+            City lasvegas = new City { Name = "Las Vegas" };
+
             Flight zrh_ber = new Flight
             {
                 Airline = swiss,
                 Name = "LX1291",
                 DepartureTime = swiss_departure,
-                Origin = "Zürich",
-                Destination = "Berlin",
+                Origin = zurich,
+                Destination = berlin,
                 TotalSeats = 80,
                 ReservedSeats = 0,
 
@@ -76,8 +85,8 @@ namespace AirlineService
                 Airline = tui,
                 Name = "TU1234",
                 DepartureTime = tui_departure,
-                Origin = "Basel",
-                Destination = "San Francisco",
+                Origin = basel,
+                Destination = sanfrancisco,
                 TotalSeats = 95,
                 ReservedSeats = 0,
             };
@@ -87,8 +96,8 @@ namespace AirlineService
                 Airline = turkish,
                 Name = "TK6666",
                 DepartureTime = turkish_departure,
-                Origin = "Istanbul",
-                Destination = "Bangkok",
+                Origin = istanbul,
+                Destination = bangkok,
                 TotalSeats = 15,
                 ReservedSeats = 0,
             };
@@ -98,19 +107,17 @@ namespace AirlineService
                 Airline = lufthansa,
                 Name = "LH1337",
                 DepartureTime = lufthansa_departure,
-                Origin = "Zürich",
-                Destination = "Las Vegas",
+                Origin = zurich,
+                Destination = lasvegas,
                 TotalSeats = 280,
                 ReservedSeats = 0,
             };
 
-            this.flights.Add(ist_bkk);
-            this.flights.Add(bsl_sfo);
-            this.flights.Add(zrh_ber);
-            this.flights.Add(zrh_las);
+            flights.Add(ist_bkk);
+            flights.Add(bsl_sfo);
+            flights.Add(zrh_ber);
+            flights.Add(zrh_las);
 
         }
-
-        
     }
 }
