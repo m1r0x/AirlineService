@@ -41,7 +41,7 @@ namespace AirlineService
         }
 
 
-        public List<Flight> GetAllFlight(DateTime DepartureTime, DateTime LandingTime, string destination, int numberOfSeats)
+        public ICollection<Flight> GetAllFlight(DateTime DepartureTime, DateTime LandingTime, string destination, int numberOfSeats)
         {
             return flights;
         }

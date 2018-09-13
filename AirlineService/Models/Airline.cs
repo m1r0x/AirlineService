@@ -7,6 +7,7 @@ using System.Runtime.Serialization;
 
 namespace AirlineService.Models
 {
+    [DataContract]
     public class Airline
     {
         [DataMember(IsRequired = true)]

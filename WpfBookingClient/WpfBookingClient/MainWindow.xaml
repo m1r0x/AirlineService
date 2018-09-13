@@ -11,6 +11,6 @@
             <Button Content="Search Flight + Hotel" Margin="0, 10, 0, 10"/>
             <Button Content="Book chosen Flight" Margin="0, 10, 0, 10"/>
         </StackPanel>
-        <DataGrid HorizontalAlignment="Left" Height="200" Margin="10,10,0,0" VerticalAlignment="Top" Width="514"/>
+        <DataGrid x:Name="DataGridViewFlights" HorizontalAlignment="Left" Height="200" Margin="10,10,0,0" VerticalAlignment="Top" Width="514"/>
     </Grid>
 </Window>

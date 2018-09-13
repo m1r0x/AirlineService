@@ -21,7 +21,7 @@ namespace AirlineService
         Flight BookAFlight(Flight flight, int numberOfSeats);
 
         [OperationContract]
-        List<Flight> GetAllFlight(DateTime DepartureTime,
+        ICollection<Flight> GetAllFlight(DateTime DepartureTime,
                                                        DateTime LandingTime,
                                                         string destination,
                                                         int numberOfSeats);
